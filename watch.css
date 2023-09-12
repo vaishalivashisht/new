@@ -1,0 +1,30 @@
+
+body{
+
+background-color: #edeaff; font-family:Arial, Helvetica, sans-serif;
+}
+
+h1{
+    font-size:50px; margin-bottom:10px;
+} 
+
+h2{
+    font-size:34px; margin-bottom:10px; text-align: center; padding:100px 0 0 0;
+} 
+
+.stopwatch{
+
+    width:90%;
+    max-width:600px;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), url(images/background.avif);
+    background-size:cover;
+    background-position: center;
+    text-align: center;
+     padding:40px 0;
+     color:#fff;
+    margin:0 auto;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.2); border-radius:12px; height:200px;
+}
+
+.icon_brod{ font-size:50px; cursor: pointer; padding:0 10px 0 0;}
+.icon_brod_red{ font-size:50px; cursor: pointer; padding:0 10px 0 0; color:red;}
