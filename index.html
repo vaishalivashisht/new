@@ -1,0 +1,85 @@
+
+<html lang='en'>
+	<head>
+		<title> Stop Watch App </title>
+		<meta charset='UFT-8' name='viewport' content='width=device-width, initial=scale=1.0'>
+		<link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+		<link rel='stylesheet' type='text/css' href='watch.css'>
+	</head>
+
+	<body>
+
+		<h2> My Stop Watch App </h2>
+
+<div class="stopwatch">
+
+<h1 id="displayTime"> 00:00:00 </h1>
+
+<div class="buttons">
+
+	<i class="fa-solid fa-circle-play icon_brod" onclick="startWatch()"></i>
+	<i class="fa-solid fa-circle-stop icon_brod_red" onclick="watchStop()"></i>
+	<i class="fa fa-refresh icon_brod" aria-hidden="true" onclick="watchReset()"></i>
+
+
+</div>
+
+</div>
+
+<script>
+
+let [seconds, minutes, hours] = [0,0,0];
+let displayTime = document.getElementById("displayTime");
+let timer = null;
+
+function stopWatch(){
+	seconds++;
+
+if(seconds == 60){
+	seconds = 0; 
+	minutes++;
+if(minutes == 60){
+	minutes = 0;
+hours++;
+}
+}
+
+let h = hours < 10 ? "0" + hours : hours;
+let m = minutes < 10 ? "0" + minutes : minutes;
+let s = seconds < 10 ? "0" + seconds : seconds;
+
+
+displayTime.innerHTML = h +":"+ m +":"+ s;
+
+}
+
+function startWatch(){
+
+	if(timer!== null){
+
+clearInterval(timer);
+	}
+
+timer = setInterval(stopWatch, 1000);
+
+
+}
+
+function watchStop(){
+
+	clearInterval(timer);
+}
+
+function watchReset(){
+
+clearInterval(timer);
+[seconds, minutes, hours] = [0,0,0];
+displayTime.innerHTML = "00:00:00";
+
+}
+
+
+</script>
+
+</body>
+</html>
